@@ -6,15 +6,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        diceImageViewOne.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceTwo")
+        randomizeDices();
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        //print("Button got tapped.")
-        diceImageViewOne.image = #imageLiteral(resourceName: "DiceFour")
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFour")
+        randomizeDices()
+    }
+    
+    func randomizeDices(){
+        diceImageViewOne.image = [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")].randomElement()
+        diceImageViewTwo.image = [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")].randomElement()
     }
     
 }
